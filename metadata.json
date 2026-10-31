@@ -1,0 +1,6 @@
+{
+  "name": "MOKU — Mindful Budgeting & Expense Tracker App for India",
+  "description": "Manage your monthly budget, track daily expenses, set savings goals and build better money habits with MOKU, a mindful budgeting application inspired by Japanese Kakeibo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

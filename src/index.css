@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --moku-bg: #F8F8F3;
+    --moku-surface: #EFF2E9;
+    --moku-primary: #476B57;
+    --moku-dark: #294C3A;
+    --moku-sage: #A8B99E;
+    --moku-text: #242C27;
+    --moku-muted: #727B73;
+    --moku-border: #E1E6DD;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #242C27;
+    background-color: #F8F8F3;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+.font-display {
+  font-family: 'Manrope', sans-serif;
+}
+
+.font-japanese {
+  font-family: 'Noto Serif JP', serif;
+}
+
+/* Custom scrollbar for gallery and code blocks */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F8F3;
+}
+::-webkit-scrollbar-thumb {
+  background: #E1E6DD;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A8B99E;
+}
+
+/* GPU-friendly FinTech Motion Keyframes */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes badge-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes word-fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 6s ease-in-out infinite;
+  animation-delay: 1.5s;
+  will-change: transform;
+}
+
+.animate-badge-pulse {
+  animation: badge-pulse 3s ease-in-out infinite;
+}
+
+/* Accessibility: respects reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-float-gentle,
+  .animate-float-delayed,
+  .animate-badge-pulse {
+    animation: none !important;
+  }
+}
