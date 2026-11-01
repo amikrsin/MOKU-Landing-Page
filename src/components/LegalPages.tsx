@@ -83,7 +83,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
               </h2>
               <ul className="list-disc pl-5 space-y-1">
                 <li>
-                  <strong>Purchase Information:</strong> When you purchase a lifetime license for ₹499, our payment processors (Razorpay / Cashfree) collect necessary transaction details (such as your email address and payment method) to issue your invoice and license key.
+                  <strong>Purchase Information:</strong> When you purchase a lifetime licence for ₹499, our payment processor (Razorpay) collects necessary transaction details (such as your email address, phone number for receipts, and payment method) to issue your invoice and cryptographically signed licence key. MOKU never stores your credit card numbers or banking passwords.
                 </li>
                 <li>
                   <strong>Support Communication:</strong> If you contact us via email at <code>{APP_CONFIG.supportEmail}</code>, we retain your email and query history solely to provide assistance.
@@ -214,8 +214,8 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
               </p>
               <ul className="list-disc pl-5 space-y-1">
                 <li>Your purchase email address</li>
-                <li>Your order ID or payment receipt from Razorpay/Cashfree</li>
-                <li>A brief description of the technical issue encountered</li>
+                <li>Your order ID or payment receipt from Razorpay</li>
+                <li>A brief description of the issue encountered</li>
               </ul>
 
               <h2 className="text-lg font-display font-bold text-[#242C27] pt-2">
@@ -446,6 +446,94 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
                 className="px-5 py-2.5 text-xs font-semibold text-white bg-[#294C3A] hover:bg-[#1E372A] rounded-xl transition-colors cursor-pointer"
               >
                 Get MOKU Lifetime Access — ₹499
+              </button>
+            </div>
+          </article>
+        )}
+
+        {/* 6. Dedicated Payment Status Page (Section 7) */}
+        {currentRoute === 'payment-status' && (
+          <article className="bg-white rounded-3xl p-8 sm:p-12 border border-[#E1E6DD] shadow-md space-y-6">
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#476B57]">
+              <Shield className="w-4 h-4" />
+              <span>Razorpay Order Status</span>
+              <span aria-hidden="true">·</span>
+              <span>Licence Delivery</span>
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl font-display font-extrabold text-[#242C27]">
+              Payment Verification & Delivery
+            </h1>
+
+            <div className="p-6 bg-[#EFF2E9]/60 rounded-2xl border border-[#E1E6DD] space-y-4">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-6 h-6 text-[#476B57] shrink-0 mt-0.5" />
+                <div className="space-y-1">
+                  <h3 className="text-lg font-bold text-[#242C27]">
+                    Automated Cloudflare Worker Delivery Active
+                  </h3>
+                  <p className="text-sm text-[#727B73] leading-relaxed">
+                    All MOKU lifetime licences are issued server-side through cryptographically verified Razorpay webhook events (<code>payment.captured</code> and <code>order.paid</code>).
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-3 border-t border-[#E1E6DD] grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-[#727B73]">
+                <div>
+                  <span className="font-semibold text-[#242C27] block">Authoritative Webhook:</span>
+                  <code className="text-[11px] bg-white px-2 py-0.5 rounded border border-[#E1E6DD] mt-0.5 block break-all">
+                    POST /api/webhook/razorpay
+                  </code>
+                </div>
+                <div>
+                  <span className="font-semibold text-[#242C27] block">Licence Activation Endpoint:</span>
+                  <code className="text-[11px] bg-white px-2 py-0.5 rounded border border-[#E1E6DD] mt-0.5 block break-all">
+                    POST /api/license/activate
+                  </code>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-4 text-sm text-[#727B73] leading-relaxed">
+              <h2 className="text-base font-display font-bold text-[#242C27]">
+                Payment Status Guidelines
+              </h2>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[#476B57] mt-1.5 shrink-0" />
+                  <div>
+                    <strong className="text-[#242C27]">Payment Successful:</strong> Your cryptographically unique licence key and one-click activation link are delivered to your registered email address within 60 seconds.
+                  </div>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-2 h-2 rounded-full bg-amber-600 mt-1.5 shrink-0" />
+                  <div>
+                    <strong className="text-[#242C27]">Payment Pending:</strong> If webhook delivery is delayed due to high bank network traffic, your order is safely queued and your licence will be emailed immediately upon confirmation.
+                  </div>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-2 h-2 rounded-full bg-red-600 mt-1.5 shrink-0" />
+                  <div>
+                    <strong className="text-[#242C27]">Payment Failed:</strong> If your card or UPI declined the charge, no licence is issued and no recurring deduction occurs. You can retry safely.
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div className="pt-6 border-t border-[#E1E6DD] flex flex-col sm:flex-row items-center justify-between gap-4">
+              <a
+                href={APP_CONFIG.liveAppUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-6 py-3 text-xs font-semibold text-white bg-[#294C3A] hover:bg-[#1E372A] rounded-xl transition-colors text-center"
+              >
+                Open MOKU App (moku.ami-kr-sin.workers.dev)
+              </a>
+              <button
+                onClick={onOpenCheckout}
+                className="w-full sm:w-auto px-6 py-3 text-xs font-semibold text-[#242C27] bg-[#EFF2E9] hover:bg-[#E1E6DD] rounded-xl transition-colors text-center cursor-pointer border border-[#E1E6DD]"
+              >
+                Purchase Licence — ₹499
               </button>
             </div>
           </article>

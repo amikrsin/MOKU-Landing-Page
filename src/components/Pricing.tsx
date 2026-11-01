@@ -10,17 +10,6 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenCheckout }) => {
   const { ref, isVisible } = useScrollReveal(0.05);
   const [hovered, setHovered] = useState(false);
 
-  const licenseHighlights = [
-    'One-time payment of ₹499 — no recurring monthly bills',
-    'Lifetime license for defined core budgeting features',
-    'Full access to the current MOKU progressive web app',
-    'Product updates within the stated license scope',
-    'Local-first offline profile with device PIN security',
-    '4 Kakeibo spending pillars & Kaizen review audits',
-    'Structured CSV/JSON transaction data export',
-    'Support via direct founder desk email',
-  ];
-
   return (
     <section id="pricing" ref={ref} className="py-20 md:py-28 bg-[#EFF2E9]/40 border-t border-[#E1E6DD]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,7 +58,7 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenCheckout }) => {
                   Commercial Release
                 </span>
                 <h3 className="text-2xl font-display font-extrabold text-[#242C27] mt-0.5">
-                  MOKU Lifetime Access
+                  MOKU Lifetime Licence
                 </h3>
               </div>
               <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#EFF5EE] text-[#294C3A] border border-[#A8B99E]/60">
@@ -88,20 +77,30 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenCheckout }) => {
                   ₹499
                 </span>
                 <span className="text-sm sm:text-base text-[#727B73] font-medium">
-                  one-time payment
+                  One-time payment of ₹499
                 </span>
               </div>
               <p className="text-xs text-[#727B73] mt-2">
-                Includes all taxes. Pay once, use forever for defined core features.
+                Includes all taxes. Pay once, use forever. No recurring subscription.
               </p>
             </div>
 
             {/* Feature Checklist with Staggered Delays */}
             <div className="space-y-3 pb-8 border-b border-[#E1E6DD] relative z-10">
               <span className="text-xs font-bold uppercase tracking-wider text-[#242C27] block mb-2">
-                What is included in your lifetime license:
+                What is included in your lifetime licence:
               </span>
-              {licenseHighlights.map((feat, idx) => (
+              {[
+                'One-time payment of ₹499 — No recurring subscription',
+                'Lifetime access under the published licence terms',
+                'Two registered devices (personal smartphone and browser)',
+                'Unique licence key delivered by email after verified payment',
+                'Secure payment processing through Razorpay (UPI, Cards, NetBanking)',
+                'Full access to the current MOKU progressive web app',
+                'Local-first offline profile with device PIN security',
+                '4 Kakeibo spending pillars & Kaizen monthly financial review audits',
+                'Direct founder desk support (ami.kr.sin@gmail.com)',
+              ].map((feat, idx) => (
                 <div
                   key={idx}
                   className={`flex items-start gap-2.5 text-sm text-[#242C27] transition-all duration-500 ${
@@ -121,36 +120,39 @@ export const Pricing: React.FC<PricingProps> = ({ onOpenCheckout }) => {
                 onClick={onOpenCheckout}
                 className="w-full py-4 px-6 text-base font-semibold text-white bg-[#294C3A] hover:bg-[#1E372A] active:scale-[0.99] rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer group"
               >
-                <span>Get MOKU for ₹499</span>
+                <span>Get MOKU Lifetime Licence — ₹499</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
 
-              <div className="flex items-center justify-center gap-4 text-xs text-[#727B73]">
+              <div className="flex items-center justify-center gap-3 text-xs text-[#727B73] flex-wrap">
                 <div className="flex items-center gap-1">
                   <ShieldCheck className="w-3.5 h-3.5 text-[#476B57]" />
-                  <span>Secure Checkout</span>
+                  <span>Secure payment processing through Razorpay</span>
                 </div>
                 <span>·</span>
-                <span>Razorpay & Cashfree Ready</span>
+                <span>UPI / Cards / NetBanking</span>
                 <span>·</span>
-                <span>Instant License Key</span>
+                <span>Instant Licence Delivery by Email</span>
               </div>
             </div>
 
             {/* Honest License & Device Clarity Box */}
-            <div className="mt-8 p-4 bg-[#F8F8F3] rounded-xl border border-[#E1E6DD] text-xs text-[#727B73] space-y-1.5 leading-relaxed relative z-10">
+            <div className="mt-8 p-4 bg-[#F8F8F3] rounded-xl border border-[#E1E6DD] text-xs text-[#727B73] space-y-2 leading-relaxed relative z-10">
               <div className="flex items-center gap-1.5 font-semibold text-[#242C27]">
                 <AlertCircle className="w-3.5 h-3.5 text-[#476B57]" />
-                <span>Transparent License & Terms Summary:</span>
+                <span>Mandatory Licence Terms & Device Policy:</span>
               </div>
               <p>
-                <strong>Scope:</strong> Personal lifetime license for all core features (budget planner, 4 pillars, daily logging, review audits, and local storage).
+                <strong>Product:</strong> MOKU Lifetime Licence (One-time payment of ₹499, no recurring subscription).
               </p>
               <p>
-                <strong>Device Limits:</strong> Active on your personal mobile and browser instances with license key restoration.
+                <strong>Scope:</strong> Lifetime access under the published licence terms for defined core budgeting features on the MOKU Progressive Web App.
               </p>
               <p>
-                <strong>Honest Note:</strong> Does not promise unlimited third-party cloud infrastructure. All core features operate self-contained on your device.
+                <strong>Device Limit:</strong> Two registered devices. Unique licence key delivered by email after verified payment.
+              </p>
+              <p className="p-2.5 bg-amber-50 rounded-lg border border-amber-200 text-amber-900 font-medium">
+                <strong>Device Recovery Policy:</strong> A registered device slot may be subject to the application&apos;s device recovery policy. No unlimited device changes or automatic transfer.
               </p>
             </div>
 

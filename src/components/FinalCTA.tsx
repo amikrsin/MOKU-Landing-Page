@@ -27,12 +27,12 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenCheckout }) => {
 
         {/* Headline */}
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-balance">
-          Give Every Rupee a Purpose.
+          Start Making More Intentional Money Decisions.
         </h2>
 
         {/* Supporting Text */}
         <p className="text-base sm:text-xl text-[#F8F8F3]/80 leading-relaxed max-w-2xl mx-auto">
-          Start planning intentionally, spending mindfully and building better financial habits — with zero recurring subscriptions.
+          Take the first step towards mindful spending and intentional savings — with MOKU.
         </p>
 
         {/* Action Button */}
@@ -41,26 +41,26 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenCheckout }) => {
             onClick={onOpenCheckout}
             className="w-full sm:w-auto px-8 py-4 text-base font-bold text-[#242C27] bg-[#F8F8F3] hover:bg-white active:scale-[0.98] rounded-xl shadow-lg transition-all flex items-center justify-center gap-2.5 cursor-pointer group"
           >
-            <span>Start with MOKU — ₹499</span>
+            <span>Get MOKU Lifetime Access — ₹499</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-[#294C3A]" />
           </button>
         </div>
 
         {/* Trust row */}
-        <div className="pt-6 border-t border-white/15 flex flex-wrap items-center justify-center gap-6 text-xs text-[#A8B99E]">
+        <div className="pt-6 border-t border-white/15 flex flex-wrap items-center justify-center gap-4 text-xs text-[#A8B99E]">
           <div className="flex items-center gap-1.5">
             <CheckCircle2 className="w-4 h-4 text-[#A8B99E]" />
-            <span>One-Time ₹499 Purchase</span>
+            <span>One-time payment</span>
           </div>
-          <span className="hidden sm:inline">·</span>
+          <span>·</span>
+          <div className="flex items-center gap-1.5">
+            <CheckCircle2 className="w-4 h-4 text-[#A8B99E]" />
+            <span>No recurring subscription</span>
+          </div>
+          <span>·</span>
           <div className="flex items-center gap-1.5">
             <ShieldCheck className="w-4 h-4 text-[#A8B99E]" />
-            <span>100% Offline Local-First</span>
-          </div>
-          <span className="hidden sm:inline">·</span>
-          <div className="flex items-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-[#A8B99E]" />
-            <span>No Recurring Fees</span>
+            <span>Secure Razorpay checkout</span>
           </div>
         </div>
 

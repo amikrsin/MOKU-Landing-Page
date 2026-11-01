@@ -189,6 +189,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenCheckout }) =>
               </li>
               <li>
                 <a
+                  href="/payment-status"
+                  onClick={(e) => handleLink(e, 'payment-status')}
+                  className="hover:text-white transition-colors"
+                >
+                  Order & Payment Status
+                </a>
+              </li>
+              <li>
+                <a
                   href="/contact"
                   onClick={(e) => handleLink(e, 'contact')}
                   className="hover:text-white transition-colors"

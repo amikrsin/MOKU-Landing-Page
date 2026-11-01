@@ -35,6 +35,7 @@ export default function App() {
         'refund-policy',
         'contact',
         'kakeibo',
+        'payment-status',
       ];
       if (validRoutes.includes(path as PageRoute)) {
         setCurrentRoute(path as PageRoute);

@@ -2,11 +2,19 @@ import { AppScreenshot, KakeiboPillar, FAQItem } from '../types';
 
 export const APP_CONFIG = {
   name: 'MOKU',
+  productName: 'MOKU Lifetime Licence',
+  productDescription: 'Mindful personal budgeting companion — lifetime access for up to 2 devices',
   tagline: 'Spend Mindfully. Save Intentionally.',
+  headline: 'Your Salary Deserves a Better Plan.',
   positioning: "Don't just track your money. Understand it.",
   liveAppUrl: 'https://moku.ami-kr-sin.workers.dev/',
   priceINR: 499,
+  pricePaise: 49900,
+  currency: 'INR',
+  checkoutButtonText: 'Buy MOKU — ₹499',
   licenseType: 'One-Time Purchase · Lifetime Access',
+  deviceLimit: 2,
+  paymentGateway: 'Razorpay',
   supportEmail: 'ami.kr.sin@gmail.com',
   domain: 'moku.in',
   targetAudience: 'Indian salaried professionals (22–35), newly married couples & mindful budgeters',
@@ -213,83 +221,97 @@ export const FAQ_DATA: FAQItem[] = [
     category: 'general',
     question: '1. What is MOKU?',
     answer:
-      'MOKU is a mindful personal budgeting and expense management application designed specifically for Indian salaried professionals and couples. Unlike traditional expense trackers that simply log bank notifications, MOKU applies the Japanese Kakeibo method to help you pre-allocate your salary, commit to savings first, categorize daily spending into 4 purposeful pillars, and conduct a peaceful monthly financial audit.',
+      'MOKU is a mindful personal budgeting and expense management application designed specifically for Indian salaried professionals, couples, and individuals looking to build financial discipline. Inspired by the Japanese Kakeibo philosophy, MOKU helps you pre-allocate your monthly salary, commit to savings first, categorize daily spending into 4 purposeful pillars, and conduct a calm monthly Kaizen reflection.',
   },
   {
-    id: 'how-kakeibo-works',
+    id: 'what-is-kakeibo',
     category: 'kakeibo',
-    question: '2. How does the Kakeibo method work?',
+    question: '2. What is the Kakeibo method?',
     answer:
-      'Invented in Japan by journalist Hani Motoko in 1904, Kakeibo translates to "household financial ledger". It centers around four questions: (1) How much money do you have? (2) How much would you like to save? (3) How much are you spending? and (4) How can you improve? It groups expenses into four pillars: Essentials (Needs), Wants (Enjoyment), Growth (Learning & Culture), and Unexpected (Unplanned).',
+      'Invented in Japan by Hani Motoko in 1904, Kakeibo translates to "household financial ledger". It centers around four reflection questions: (1) How much money do I have available? (2) How much money would I like to save? (3) How much money am I spending? and (4) How can I improve? Daily spending is organized into four distinct pillars: Essentials (Needs), Wants (Enjoyment), Growth (Learning & Culture), and Unexpected (Unplanned).',
   },
   {
     id: 'is-subscription',
     category: 'pricing',
     question: '3. Is MOKU a subscription?',
     answer:
-      'No. MOKU is completely free from monthly or annual recurring subscriptions. You pay a single one-time price of ₹499 for lifetime access to the core application features.',
+      'No. MOKU is completely free from monthly or annual recurring subscriptions. You pay a single one-time price of ₹499 for a lifetime licence. There are zero renewal charges, no lock-in fees, and no feature paywalls for defined core features.',
   },
   {
-    id: 'is-499-onetime',
+    id: 'how-much-cost',
     category: 'pricing',
-    question: '4. Is the ₹499 payment one-time?',
+    question: '4. How much does MOKU cost?',
     answer:
-      'Yes. The ₹499 payment is a one-time charge. There are no surprise renewal charges, no hidden lock-in fees, and no feature paywalls for defined core features.',
+      'MOKU costs a single one-time launch payment of ₹499 (all taxes included). This provides lifetime access to the MOKU budgeting application without recurring fees.',
   },
   {
-    id: 'offline-mode',
-    category: 'privacy',
-    question: '5. Does MOKU work offline?',
-    answer:
-      'Yes. MOKU is architected with a local-first profile. You can record daily expenses, review your monthly budget, and track your spendable pool entirely offline without an active internet connection. Your records are preserved directly in your browser or device storage.',
-  },
-  {
-    id: 'android-availability',
-    category: 'technical',
-    question: '6. Is MOKU available on Android?',
-    answer:
-      'Yes. MOKU runs as an installable Progressive Web Application (PWA) with native-like standalone mode on Android devices. You can install it directly to your home screen from Chrome or any modern browser, launch it without browser bars, and access it anytime with full offline support.',
-  },
-  {
-    id: 'account-required',
-    category: 'privacy',
-    question: '7. Do I need to create an account?',
-    answer:
-      'No account creation is required to use MOKU in local offline mode. You can start budgeting immediately. Optional sync/sign-in capabilities are available if you wish to back up your ledger across multiple devices.',
-  },
-  {
-    id: 'data-storage',
-    category: 'privacy',
-    question: '8. Where is my financial data stored?',
-    answer:
-      'Your financial records, income targets, and expense entries are stored locally on your device storage by default. MOKU never asks for your bank account passwords, net banking credentials, or SMS reader permissions, ensuring your financial privacy remains 100% in your hands.',
-  },
-  {
-    id: 'export-data',
-    category: 'technical',
-    question: '9. Can I export my data?',
-    answer:
-      'Yes. MOKU allows you to export your monthly logs and transaction summaries as structured CSV/JSON data from your device settings for backup or personal spreadsheet analysis.',
-  },
-  {
-    id: 'recover-purchase',
+    id: 'how-receive-licence',
     category: 'pricing',
-    question: '10. How can I recover my purchase?',
+    question: '5. How do I receive my licence key?',
     answer:
-      'When you complete your ₹499 purchase, you receive an order confirmation and license key associated with your purchase email address. You can re-enter this license key in the MOKU app under Settings > "Unlock Full App" at any time.',
+      'Immediately following verified payment via Razorpay, our automated delivery system generates a cryptographically unique licence key and sends it to your registered email address along with a one-click activation link.',
+  },
+  {
+    id: 'how-activate',
+    category: 'technical',
+    question: '6. How do I activate MOKU?',
+    answer:
+      'You can activate MOKU in two easy ways: (1) Click the one-click activation link in your delivery email, or (2) Open MOKU at moku.ami-kr-sin.workers.dev, go to Space & Settings > "Unlock Full App", and paste your licence key.',
+  },
+  {
+    id: 'phone-and-laptop',
+    category: 'technical',
+    question: '7. Can I use MOKU on my phone and laptop?',
+    answer:
+      'Yes. MOKU is a modern Progressive Web App (PWA) accessible across devices. You can install it natively on your Android phone and access it on your laptop or desktop browser.',
+  },
+  {
+    id: 'device-limit',
+    category: 'pricing',
+    question: '8. How many devices can I activate?',
+    answer:
+      'Each MOKU lifetime licence permits activation on up to two (2) personal registered devices simultaneously (for example, your personal smartphone and your laptop).',
+  },
+  {
+    id: 'works-offline',
+    category: 'privacy',
+    question: '9. Does MOKU work offline?',
+    answer:
+      'Yes. MOKU operates with a local-first architecture. You can log expenses, inspect your monthly budget pool, and view spending statistics even with no internet connection.',
   },
   {
     id: 'change-phone',
     category: 'technical',
-    question: '11. What happens if I change my phone?',
+    question: '10. What happens if I change my phone?',
     answer:
-      'You can restore your lifetime license on your new phone by entering your registered license key. To transfer existing historical data, simply export your backup file from your old device and import it on the new device, or use the optional sync feature.',
+      'You can restore your lifetime licence on your new phone using your registered licence key. You can also transfer your data at any time using MOKU\'s built-in CSV/JSON backup and export feature.',
+  },
+  {
+    id: 'privacy-shared',
+    category: 'privacy',
+    question: '11. Is my financial information shared with anyone?',
+    answer:
+      'No. Your financial records, income targets, and daily expenses remain stored locally on your device storage. MOKU never accesses bank credentials, passwords, or SMS feeds.',
+  },
+  {
+    id: 'payment-methods',
+    category: 'pricing',
+    question: '12. Which payment methods are supported?',
+    answer:
+      'Payments are processed securely through Razorpay Checkout. Supported Indian payment methods include UPI (Google Pay, PhonePe, Paytm, BHIM), Debit & Credit Cards (Visa, Mastercard, RuPay), and Net Banking across major Indian banks.',
+  },
+  {
+    id: 'payment-no-email',
+    category: 'pricing',
+    question: '13. What happens if my payment succeeds but I do not receive the email?',
+    answer:
+      'First check your spam/promotions folder. If webhook processing is delayed or the email is missing after 10 minutes, email ami.kr.sin@gmail.com with your Razorpay payment ID, and our support desk will verify your order and manually re-dispatch your licence.',
   },
   {
     id: 'contact-support',
     category: 'general',
-    question: '12. How do I contact support?',
+    question: '14. How can I contact support?',
     answer:
-      'You can reach our dedicated support desk directly via email at ami.kr.sin@gmail.com, or submit a request through our Contact page. We respond to all user inquiries within 24–48 business hours.',
+      'You can reach our support desk anytime at ami.kr.sin@gmail.com. We respond to all queries and licence assistance requests within 24–48 business hours.',
   },
 ];

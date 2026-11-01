@@ -28,4 +28,4 @@ export interface FAQItem {
   category: 'general' | 'kakeibo' | 'pricing' | 'privacy' | 'technical';
 }
 
-export type PageRoute = 'home' | 'privacy-policy' | 'terms' | 'refund-policy' | 'contact' | 'kakeibo';
+export type PageRoute = 'home' | 'privacy-policy' | 'terms' | 'refund-policy' | 'contact' | 'kakeibo' | 'payment-status';
